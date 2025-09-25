@@ -18,21 +18,16 @@ export default function Hero() {
           
           {/* メインキャッチコピー */}
           <h2 className="text-4xl md:text-6xl font-bold text-slate-900 mb-6 leading-tight">
-            自由診療で
-            <span className="text-blue-600">10歳若く健康的な日々</span>
+            自由診療の
+            <span className="text-blue-600">売上・利益・稼働率</span>
             を、<br />
-            正しく、収益的に。
+            次のステージへ。
           </h2>
-          
-          {/* 比喩注記 */}
-          <p className="text-sm text-slate-600 mb-8 italic">
-            ※「10歳若返る」は健康的な生活による比喩的表現です
-          </p>
           
           {/* サブテキスト */}
           <p className="text-xl text-slate-700 mb-12 max-w-3xl mx-auto leading-relaxed">
             自由診療を導入・強化したい医療機関（歯科・クリニック）の意思決定者様へ。<br />
-            患者価値×収益性×倫理性を両立し、健康寿命の延伸と自然な美の追求をサポートする総合ソリューションです。
+            AI価格戦略×決済×サブスクで稼働率と単価を最適化し、持続的な収益成長を実現する総合ソリューションです。
           </p>
           
           {/* CTA ボタン */}

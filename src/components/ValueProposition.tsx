@@ -60,7 +60,7 @@ export default function ValueProposition() {
             <span className="text-blue-600">3つの価値</span>
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-            患者様の真の価値と医院の持続的成長を両立する、
+            売上・利益・稼働率の向上と持続的な成長を実現する、
             包括的なソリューションをご提供します
           </p>
         </div>

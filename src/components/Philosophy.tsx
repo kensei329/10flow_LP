@@ -44,8 +44,8 @@ export default function Philosophy() {
             私たちの理念と適用範囲
           </h2>
           <p className="text-xl text-slate-600 max-w-4xl mx-auto">
-            10flowは、健康寿命の延伸と自然な美の追求を中核とし、<br />
-            患者様の本来の魅力を輝かせる医療をサポートします
+            10flowは、医療機関の持続的な成長と患者様の真の価値創出を両立し、<br />
+            収益性と倫理性を兼ね備えた自由診療をサポートします
           </p>
         </div>
 
@@ -59,14 +59,14 @@ export default function Philosophy() {
                 </svg>
               </div>
               <h3 className="text-2xl font-bold text-slate-900">
-                Flow = 不老（フロー）
+                Flow = 流れ（フロー）
               </h3>
             </div>
             <p className="text-slate-700 leading-relaxed mb-4">
-              「10歳若返る」という比喩は、単なる外見の変化ではなく、健康的で活力に満ちた生活の実現を表現しています。
+              「流れ」は、患者様の来院から治療、継続まで、スムーズで自然な流れを意味します。
             </p>
             <p className="text-slate-700 leading-relaxed">
-              身体の巡りを良くし、本来の健康状態を取り戻すことで、患者様が自信と活力を持って日々を過ごせるよう支援します。
+              診療の流れを最適化し、患者様の満足度向上と医院の収益性向上を両立する仕組みを提供します。
             </p>
           </div>
 
@@ -82,7 +82,7 @@ export default function Philosophy() {
               </h3>
             </div>
             <p className="text-slate-700 leading-relaxed mb-4">
-              コンプレックスを煽るのではなく、患者様の本来の美しさと健康を引き出すことを目指します。
+              患者様の真のニーズに基づいた適切な治療提案と、持続可能な収益モデルの構築を目指します。
             </p>
             <p className="text-slate-700 leading-relaxed">
               医療広告ガイドライン・薬機法を遵守し、エビデンスに基づいた正しい情報提供を徹底します。
@@ -97,7 +97,7 @@ export default function Philosophy() {
               対象となる自由診療メニュー
             </h3>
             <p className="text-slate-600 max-w-3xl mx-auto">
-              健康寿命の延伸と自然な美の追求に適合する診療メニューを幅広くサポートします
+              医療機関の収益性向上と患者様の価値創出に適合する診療メニューを幅広くサポートします
             </p>
           </div>
 
@@ -137,7 +137,7 @@ export default function Philosophy() {
                 10flowでは対象外となる施術
               </h3>
               <p className="text-red-800 mb-4">
-                以下のような「人工的な外見の作り変え」を主目的とする施術は、10flowの理念に適合しないため対象外となります：
+                以下のような「収益性と患者価値のバランスが取れない」施術は、10flowの理念に適合しないため対象外となります：
               </p>
               <ul className="text-red-700 space-y-2">
                 <li className="flex items-start">
@@ -154,7 +154,7 @@ export default function Philosophy() {
                 </li>
               </ul>
               <p className="text-red-700 text-sm mt-4 italic">
-                ※ ただし、機能改善・健康増進を主目的とし、結果として審美性も向上する治療については、個別に検討いたします
+                ※ ただし、機能改善・健康増進を主目的とし、収益性と患者価値の両立が可能な治療については、個別に検討いたします
               </p>
             </div>
           </div>

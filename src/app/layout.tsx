@@ -15,8 +15,8 @@ const notoSansJP = Noto_Sans_JP({
 })
 
 export const metadata: Metadata = {
-  title: "10flow（テンフロー）- 自由診療で10歳若く健康的な日々を、正しく、収益的に",
-  description: "自由診療を導入・強化したい医療機関（歯科・クリニック）向けの総合ソリューション。患者価値×収益性×倫理性を両立し、健康寿命の延伸と自然な美の追求をサポートします。AI価格戦略、決済システム、サブスクリプション等を統合。",
+  title: "10flow（テンフロー）- 自由診療の売上・利益・稼働率を次のステージへ",
+  description: "自由診療を導入・強化したい医療機関（歯科・クリニック）向けの総合ソリューション。AI価格戦略×決済×サブスクで稼働率と単価を最適化し、持続的な収益成長を実現。",
   keywords: "自由診療, 医療機関, クリニック, 歯科, 収益最適化, 患者価値, 健康寿命, アンチエイジング, AI価格戦略, 医療DX",
   authors: [{ name: "10flow Team" }],
   creator: "10flow",
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@10flow_official",
     creator: "@10flow_official",
-    title: "10flow（テンフロー）- 自由診療で10歳若く健康的な日々を",
+    title: "10flow（テンフロー）- 自由診療の売上・利益・稼働率を次のステージへ",
     description: "自由診療を導入・強化したい医療機関向けの総合ソリューション",
     images: ["/og-image.jpg"],
   },
