@@ -1,0 +1,180 @@
+export default function Philosophy() {
+  const targetServices = [
+    {
+      category: "眼科",
+      services: ["屈折矯正（レーシック/オルソ）", "近視進行抑制プログラム", "ドライアイ先進ケア", "視覚トレーニング"]
+    },
+    {
+      category: "毛髪治療",
+      services: ["AGA治療（内服/外用）", "頭皮メソ/PRP", "生活習慣改善指導", "栄養療法"]
+    },
+    {
+      category: "点滴・注射",
+      services: ["高濃度ビタミンC", "マイヤーズ点滴", "疲労回復注射", "免疫力向上療法"]
+    },
+    {
+      category: "予防医療",
+      services: ["栄養解析・指導", "睡眠改善プログラム", "メディカルフィットネス", "腸活プログラム"]
+    },
+    {
+      category: "検診・ドック",
+      services: ["人間ドック上位プラン", "高精度画像診断", "血管年齢測定", "遺伝リスク検査"]
+    },
+    {
+      category: "心療内科",
+      services: ["心理カウンセリング", "認知行動療法", "ストレスマネジメント", "マインドフルネス"]
+    },
+    {
+      category: "皮膚科（審美）",
+      services: ["シミ・色素沈着治療", "医療スキンケア", "ケミカルピーリング", "毛穴改善"]
+    },
+    {
+      category: "歯科",
+      services: ["医療ホワイトニング", "セラミック治療", "歯周再生", "インプラント"]
+    }
+  ]
+
+  return (
+    <section className="py-20 bg-slate-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* セクションヘッダー */}
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+            <span className="text-blue-600">Philosophy</span><br />
+            私たちの理念と適用範囲
+          </h2>
+          <p className="text-xl text-slate-600 max-w-4xl mx-auto">
+            10flowは、健康寿命の延伸と自然な美の追求を中核とし、<br />
+            患者様の本来の魅力を輝かせる医療をサポートします
+          </p>
+        </div>
+
+        {/* 理念の説明 */}
+        <div className="grid lg:grid-cols-2 gap-12 mb-20">
+          <div className="bg-white rounded-2xl p-8 border border-slate-200">
+            <div className="flex items-center mb-6">
+              <div className="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mr-4">
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold text-slate-900">
+                Flow = 不老（フロー）
+              </h3>
+            </div>
+            <p className="text-slate-700 leading-relaxed mb-4">
+              「10歳若返る」という比喩は、単なる外見の変化ではなく、健康的で活力に満ちた生活の実現を表現しています。
+            </p>
+            <p className="text-slate-700 leading-relaxed">
+              身体の巡りを良くし、本来の健康状態を取り戻すことで、患者様が自信と活力を持って日々を過ごせるよう支援します。
+            </p>
+          </div>
+
+          <div className="bg-white rounded-2xl p-8 border border-slate-200">
+            <div className="flex items-center mb-6">
+              <div className="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center mr-4">
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold text-slate-900">
+                倫理性の重視
+              </h3>
+            </div>
+            <p className="text-slate-700 leading-relaxed mb-4">
+              コンプレックスを煽るのではなく、患者様の本来の美しさと健康を引き出すことを目指します。
+            </p>
+            <p className="text-slate-700 leading-relaxed">
+              医療広告ガイドライン・薬機法を遵守し、エビデンスに基づいた正しい情報提供を徹底します。
+            </p>
+          </div>
+        </div>
+
+        {/* 対象範囲 */}
+        <div className="mb-16">
+          <div className="text-center mb-12">
+            <h3 className="text-3xl font-bold text-slate-900 mb-4">
+              対象となる自由診療メニュー
+            </h3>
+            <p className="text-slate-600 max-w-3xl mx-auto">
+              健康寿命の延伸と自然な美の追求に適合する診療メニューを幅広くサポートします
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {targetServices.map((category, index) => (
+              <div key={index} className="bg-white rounded-xl p-6 border border-slate-200 hover:shadow-lg transition-shadow">
+                <h4 className="text-lg font-bold text-slate-900 mb-4 text-center">
+                  {category.category}
+                </h4>
+                <ul className="space-y-2">
+                  {category.services.map((service, idx) => (
+                    <li key={idx} className="flex items-start">
+                      <svg className="w-4 h-4 text-emerald-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                      <span className="text-sm text-slate-700">
+                        {service}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* 対象外の明示 */}
+        <div className="bg-red-50 border border-red-200 rounded-2xl p-8">
+          <div className="flex items-start">
+            <div className="w-12 h-12 bg-red-100 text-red-600 rounded-xl flex items-center justify-center mr-6 flex-shrink-0">
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.996-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z" />
+              </svg>
+            </div>
+            <div>
+              <h3 className="text-2xl font-bold text-red-900 mb-4">
+                10flowでは対象外となる施術
+              </h3>
+              <p className="text-red-800 mb-4">
+                以下のような「人工的な外見の作り変え」を主目的とする施術は、10flowの理念に適合しないため対象外となります：
+              </p>
+              <ul className="text-red-700 space-y-2">
+                <li className="flex items-start">
+                  <span className="mr-2">•</span>
+                  <span>美容整形手術（顔・体の形成を目的とするもの）</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-2">•</span>
+                  <span>豊胸手術など、身体を人工的に変化させる施術</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-2">•</span>
+                  <span>コンプレックスビジネスを主目的とする施術</span>
+                </li>
+              </ul>
+              <p className="text-red-700 text-sm mt-4 italic">
+                ※ ただし、機能改善・健康増進を主目的とし、結果として審美性も向上する治療については、個別に検討いたします
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* 医療広告ガイドライン遵守 */}
+        <div className="mt-16 bg-blue-50 border border-blue-200 rounded-2xl p-8">
+          <div className="text-center">
+            <h3 className="text-2xl font-bold text-blue-900 mb-4">
+              医療広告ガイドライン・薬機法完全準拠
+            </h3>
+            <p className="text-blue-800 max-w-4xl mx-auto leading-relaxed">
+              10flowは医療広告ガイドライン・薬機法・景品表示法を完全に遵守し、
+              誇大表現や虚偽の情報を排除した、正確で信頼できる情報提供を徹底します。
+              また、個人差や副作用・リスクについても適切に説明し、
+              患者様が十分な理解のもとで治療選択できるよう支援します。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
