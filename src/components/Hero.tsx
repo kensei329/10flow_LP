@@ -26,8 +26,8 @@ export default function Hero() {
           
           {/* サブテキスト */}
           <p className="text-xl text-slate-700 mb-12 max-w-3xl mx-auto leading-relaxed">
-            自由診療を導入・強化したい医療機関（歯科・クリニック）の意思決定者様へ。<br />
-            AI価格戦略×決済×サブスクで稼働率と単価を最適化し、持続的な収益成長を実現する総合ソリューションです。
+            10flowは生成AIが稼働率と単価を最適化し、<br />
+            自由診療の収益を持続的に伸ばす総合ソリューションです。
           </p>
           
           {/* CTA ボタン */}
