@@ -3,17 +3,17 @@ export default function ValueProposition() {
     {
       icon: (
         <svg className="w-12 h-12 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C20.832 18.477 19.246 18 17.5 18c-1.746 0-3.332.477-4.5 1.253" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
         </svg>
       ),
-      title: "患者教育の仕組み化",
-      subtitle: "正しい価値を伝える",
-      description: "自然な美と健康寿命の意義を患者様に正しく理解していただける教育システム。エビデンスに基づいた情報提供で、患者様の不安を解消し、適切な治療選択をサポートします。",
+      title: "様々な新規患者獲得導線",
+      subtitle: "患者マーケティング仕組み化",
+      description: "SEOや生成AI（LLMO）時代に対応した自由診療LPを自動生成。検索エンジンだけでなく生成AIの回答にも拾われやすく、貴クリニックが新規患者の第一候補に選ばれる導線を構築します。",
       benefits: [
-        "医療広告ガイドライン完全準拠",
-        "患者様向け教育コンテンツ自動生成",
-        "治療前後の丁寧な説明サポート",
-        "エビデンスベースの情報提供"
+        "SEO・LLMO対策済みコンテンツの自動生成",
+        "治療前後のわかりやすい説明ページを提供",
+        "エビデンスベースの安心感ある情報発信",
+        "医療広告ガイドライン完全準拠"
       ]
     },
     {
@@ -22,14 +22,14 @@ export default function ValueProposition() {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
         </svg>
       ),
-      title: "AI価格戦略×稼働率最適化",
-      subtitle: "収益性の最大化",
-      description: "周辺競合分析と需要予測により、適正価格を自動提案。平日・土日の価格差設定や年次改定により稼働率を平準化し、売上の最適化を実現します。",
+      title: "競争力のある魅力的な価格をAIが提案",
+      subtitle: "AI価格戦略×稼働率最適化",
+      description: "周辺競合や需要動向を自動分析し、AIが最適な価格設定を提案。平日・休日・キャンペーンごとに柔軟に価格調整し、稼働率と収益性を両立させます。",
       benefits: [
         "競合価格の自動調査・分析",
-        "需要に応じた動的価格設定",
-        "稼働率平準化アルゴリズム",
-        "年次改定とキャンペーン最適化"
+        "需要に応じたダイナミックプライシング",
+        "稼働率を平準化するアルゴリズム",
+        "年次改定・キャンペーン最適化"
       ]
     },
     {
@@ -38,9 +38,9 @@ export default function ValueProposition() {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
         </svg>
       ),
-      title: "初期障壁低減×継続率向上",
-      subtitle: "患者様の安心と継続",
-      description: "30日間完全保証とポイント還元システムで初回来院の心理的ハードルを下げ、継続的な通院を促進。患者様のLTV向上と医院の安定収益を両立します。",
+      title: "初回申込み率/継続率ともに向上",
+      subtitle: "初期障壁低減×継続率向上",
+      description: "30日間完全保証で初回申込みの不安を解消。さらにポイント還元やサブスク管理で継続率を高め、LTV向上と医院の安定収益を実現します。",
       benefits: [
         "30日間サービス完全保証",
         "診療ポイント還元システム",
@@ -59,10 +59,6 @@ export default function ValueProposition() {
             10flowが実現する
             <span className="text-blue-600">3つの価値</span>
           </h2>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-            売上・利益・稼働率の向上と持続的な成長を実現する、
-            包括的なソリューションをご提供します
-          </p>
         </div>
 
         {/* 価値の3本柱 */}
