@@ -1,36 +1,154 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 10flow LP (テンフロー)
 
-## Getting Started
+自由診療を導入・強化したい医療機関（歯科・クリニック）向けの総合ソリューションのランディングページです。
 
-First, run the development server:
+## 🎯 概要
 
+10flow（テンフロー）は、患者価値×収益性×倫理性を両立し、健康寿命の延伸と自然な美の追求をサポートする医療機関向けプラットフォームです。
+
+## ✨ 主な機能
+
+### 価値の3本柱
+- **患者教育の仕組み化**: 正しい価値を伝える教育システム
+- **AI価格戦略×稼働率最適化**: 収益性の最大化
+- **初期障壁低減×継続率向上**: 患者様の安心と継続
+
+### 包括的な機能ラインナップ
+- 各社LP自動生成・Web公開（SEO/LLMO最適化）
+- 2ステップ問い合わせフォーム
+- AI競合価格提案
+- 年度ごと値上げ提案
+- 稼働率平準化価格
+- サブスクリプション設計
+- 30日間サービス完全保証
+- ポイント還元システム
+
+## 🛠 技術スタック
+
+- **フレームワーク**: Next.js 15
+- **言語**: TypeScript
+- **スタイリング**: TailwindCSS 3.4.0
+- **フォント**: Inter + Noto Sans JP (Google Fonts)
+- **デプロイ**: Vercel対応
+
+## 🚀 セットアップ
+
+### 必要な環境
+- Node.js 18.0.0以上
+- npm または yarn
+
+### インストール
 ```bash
+# リポジトリをクローン
+git clone https://github.com/kensei329/10flow_LP.git
+cd 10flow_LP
+
+# 依存関係をインストール
+npm install
+
+# 開発サーバーを起動
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### ビルド
+```bash
+# プロダクションビルド
+npm run build
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+# プロダクションサーバーを起動
+npm start
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📁 プロジェクト構造
 
-## Learn More
+```
+src/
+├── app/
+│   ├── globals.css      # グローバルスタイル
+│   ├── layout.tsx       # ルートレイアウト
+│   └── page.tsx         # メインページ
+└── components/
+    ├── Hero.tsx                    # ヒーローセクション
+    ├── ValueProposition.tsx        # 価値提案セクション
+    ├── Features.tsx                # 機能一覧セクション
+    ├── HowItWorks.tsx              # 導入ステップセクション
+    ├── Philosophy.tsx              # 理念・適用範囲セクション
+    ├── CaseStudies.tsx             # 導入事例セクション
+    ├── FAQ.tsx                     # よくある質問セクション
+    ├── CTAForm.tsx                 # CTA・フォームセクション
+    └── Footer.tsx                  # フッターセクション
+```
 
-To learn more about Next.js, take a look at the following resources:
+## 🎨 デザインシステム
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### カラーパレット
+- **プライマリ**: ブルー系（#0284c7）
+- **セカンダリ**: グレー系（#475569）
+- **アクセント**: エメラルド、パープル、オレンジ
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### フォント
+- **日本語**: Noto Sans JP
+- **英語**: Inter
 
-## Deploy on Vercel
+## 📱 レスポンシブ対応
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- モバイルファーストデザイン
+- タブレット・デスクトップ対応
+- アクセシビリティ配慮
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🔍 SEO/LLMO最適化
+
+- 構造化データ（Organization, Service, FAQ, WebSite）
+- メタタグ最適化
+- 生成AI向けメタ情報
+- 医療広告ガイドライン準拠
+
+## ⚖️ 法令遵守
+
+- 医療広告ガイドライン完全準拠
+- 薬機法・景品表示法対応
+- 誇大表現の排除
+- 個人差・リスクの適切な注記
+
+## 📊 KPI目標
+
+- デモ/相談のCVR: 3-7%
+- Hero直下CTAクリック率: 15%+
+- 機能セクション到達率: 60%+
+- フォーム完了率: 40%+
+
+## 🚀 デプロイ
+
+### Vercel
+```bash
+# Vercel CLIでデプロイ
+npx vercel
+
+# または GitHubと連携して自動デプロイ
+```
+
+### その他のプラットフォーム
+- Netlify
+- AWS Amplify
+- その他Next.js対応ホスティング
+
+## 📝 今後の対応項目
+
+- [ ] Googleフォームの作成・埋め込み
+- [ ] 企業ロゴ・画像の追加
+- [ ] 実際のデータ更新
+- [ ] 追加ページ作成（プライバシーポリシー等）
+- [ ] Google Analytics設定
+
+## 📄 ライセンス
+
+このプロジェクトはプライベートプロジェクトです。
+
+## 📞 お問い合わせ
+
+- 開発者: kensei329
+- GitHub: [https://github.com/kensei329/10flow_LP](https://github.com/kensei329/10flow_LP)
+
+---
+
+**10flow（テンフロー）** - 自由診療で10歳若く健康的な日々を、正しく、収益的に。
