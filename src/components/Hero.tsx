@@ -26,7 +26,7 @@ export default function Hero() {
           
           {/* サブテキスト */}
           <p className="text-xl text-slate-700 mb-12 max-w-3xl mx-auto leading-relaxed">
-            10flowは生成AIが稼働率と単価を最適化し、<br />
+            10flowは生成AIが稼働率と単価およびマーケティングを最適化し、<br />
             自由診療の収益を持続的に伸ばす総合ソリューションです。
           </p>
           

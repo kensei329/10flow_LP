@@ -116,7 +116,7 @@ export default function ValueProposition() {
           <div className="grid md:grid-cols-4 gap-8">
             <div className="text-center">
               <div className="text-3xl font-bold text-blue-600 mb-2">25%</div>
-              <div className="text-slate-700 font-medium">初回CV率向上</div>
+              <div className="text-slate-700 font-medium">CV率向上</div>
             </div>
             <div className="text-center">
               <div className="text-3xl font-bold text-emerald-600 mb-2">40%</div>

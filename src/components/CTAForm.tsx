@@ -3,241 +3,251 @@
 import { useState } from 'react'
 
 export default function CTAForm() {
-  const [currentStep, setCurrentStep] = useState(1)
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    clinicName: '',
+    clinicType: '',
+    message: ''
+  })
+
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [isSubmitted, setIsSubmitted] = useState(false)
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    })
+  }
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+    
+    // ここで実際のフォーム送信処理を実装
+    // 例: APIエンドポイントへの送信
+    await new Promise(resolve => setTimeout(resolve, 1000)) // デモ用の遅延
+    
+    setIsSubmitting(false)
+    setIsSubmitted(true)
+  }
+
+  if (isSubmitted) {
+    return (
+      <section className="bg-blue-600 py-20">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="bg-white rounded-2xl p-8 shadow-2xl">
+            <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+              <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            <h2 className="text-3xl font-bold text-slate-900 mb-4">
+              お申し込みありがとうございます！
+            </h2>
+            <p className="text-lg text-slate-600 mb-6">
+              担当者より24時間以内にご連絡いたします。<br />
+              今しばらくお待ちください。
+            </p>
+            <button
+              onClick={() => setIsSubmitted(false)}
+              className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors duration-200"
+            >
+              新しいお申し込み
+            </button>
+          </div>
+        </div>
+      </section>
+    )
+  }
 
   return (
-    <section id="consultation" className="py-20 bg-gradient-to-br from-blue-600 to-blue-800">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* メインCTA */}
-        <div className="text-center text-white mb-16">
-          <h2 className="text-4xl md:text-6xl font-bold mb-6">
-            今すぐ始めませんか？
+    <section className="bg-blue-600 py-20" id="consultation">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            今すぐ始める
           </h2>
-          <p className="text-xl md:text-2xl text-blue-100 mb-8 max-w-3xl mx-auto leading-relaxed">
-            無料収益診断で、貴院の自由診療における<br />
-            具体的な改善ポイントと収益向上の可能性を明確にします
+          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+            無料収益診断で、あなたの医療機関の<br />
+            収益向上の可能性を確認しましょう
           </p>
           
-          {/* 特典 */}
-          <div className="inline-flex items-center bg-white/20 backdrop-blur-sm rounded-full px-6 py-3 mb-12">
-            <svg className="w-6 h-6 text-yellow-300 mr-2" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+          {/* 保証バッジ */}
+          <div className="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 text-white">
+            <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
-            <span className="text-white font-semibold">
-              今なら診断結果レポート（通常5万円相当）を無料プレゼント
-            </span>
+            <span className="font-semibold">30日間完全保証</span>
           </div>
         </div>
 
-        {/* 2ステップフォーム */}
-        <div className="bg-white rounded-3xl shadow-2xl overflow-hidden">
-          {/* ステップインジケーター */}
-          <div className="bg-slate-50 px-8 py-6">
-            <div className="flex items-center justify-center">
-              <div className="flex items-center space-x-4">
-                <div className={`flex items-center ${currentStep >= 1 ? 'text-blue-600' : 'text-slate-400'}`}>
-                  <div className={`w-8 h-8 rounded-full flex items-center justify-center font-semibold border-2 
-                    ${currentStep >= 1 ? 'bg-blue-600 text-white border-blue-600' : 'border-slate-300'}`}>
-                    1
-                  </div>
-                  <span className="ml-2 font-medium">基本情報</span>
-                </div>
-                <div className="w-8 h-1 bg-slate-300 rounded-full">
-                  <div className={`h-full bg-blue-600 rounded-full transition-all duration-300 
-                    ${currentStep >= 2 ? 'w-full' : 'w-0'}`}></div>
-                </div>
-                <div className={`flex items-center ${currentStep >= 2 ? 'text-blue-600' : 'text-slate-400'}`}>
-                  <div className={`w-8 h-8 rounded-full flex items-center justify-center font-semibold border-2 
-                    ${currentStep >= 2 ? 'bg-blue-600 text-white border-blue-600' : 'border-slate-300'}`}>
-                    2
-                  </div>
-                  <span className="ml-2 font-medium">詳細・送信</span>
-                </div>
+        <div className="bg-white rounded-2xl p-8 shadow-2xl">
+          <form onSubmit={handleSubmit} className="space-y-6">
+            <div className="grid md:grid-cols-2 gap-6">
+              {/* お名前 */}
+              <div>
+                <label htmlFor="name" className="block text-sm font-semibold text-slate-700 mb-2">
+                  お名前 <span className="text-red-500">*</span>
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
+                  placeholder="山田太郎"
+                />
+              </div>
+
+              {/* メールアドレス */}
+              <div>
+                <label htmlFor="email" className="block text-sm font-semibold text-slate-700 mb-2">
+                  メールアドレス <span className="text-red-500">*</span>
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
+                  placeholder="example@clinic.com"
+                />
+              </div>
+
+              {/* 電話番号 */}
+              <div>
+                <label htmlFor="phone" className="block text-sm font-semibold text-slate-700 mb-2">
+                  電話番号 <span className="text-red-500">*</span>
+                </label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
+                  placeholder="03-1234-5678"
+                />
+              </div>
+
+              {/* 医療機関名 */}
+              <div>
+                <label htmlFor="clinicName" className="block text-sm font-semibold text-slate-700 mb-2">
+                  医療機関名 <span className="text-red-500">*</span>
+                </label>
+                <input
+                  type="text"
+                  id="clinicName"
+                  name="clinicName"
+                  value={formData.clinicName}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
+                  placeholder="○○歯科医院"
+                />
               </div>
             </div>
-          </div>
 
-          {/* フォーム内容 */}
-          <div className="p-8 lg:p-12">
-            {currentStep === 1 ? (
-              <div>
-                <h3 className="text-2xl font-bold text-slate-900 mb-2 text-center">
-                  まずは基本情報をお聞かせください
-                </h3>
-                <p className="text-slate-600 text-center mb-8">
-                  簡単な情報で診断を開始できます（約30秒）
-                </p>
+            {/* 診療科目 */}
+            <div>
+              <label htmlFor="clinicType" className="block text-sm font-semibold text-slate-700 mb-2">
+                診療科目 <span className="text-red-500">*</span>
+              </label>
+              <select
+                id="clinicType"
+                name="clinicType"
+                value={formData.clinicType}
+                onChange={handleChange}
+                required
+                className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
+              >
+                <option value="">選択してください</option>
+                <option value="dental">歯科</option>
+                <option value="internal">内科</option>
+                <option value="dermatology">皮膚科・美容皮膚科</option>
+                <option value="ophthalmology">眼科</option>
+                <option value="psychiatry">心療内科・精神科</option>
+                <option value="orthopedics">整形外科</option>
+                <option value="other">その他</option>
+              </select>
+            </div>
 
-                <form className="space-y-6 max-w-2xl mx-auto">
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div>
-                      <label className="block text-sm font-semibold text-slate-900 mb-2">
-                        医院名 <span className="text-red-500">*</span>
-                      </label>
-                      <input 
-                        type="text" 
-                        className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
-                        placeholder="例：○○歯科クリニック"
-                        required
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-semibold text-slate-900 mb-2">
-                        診療科目 <span className="text-red-500">*</span>
-                      </label>
-                      <select className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors">
-                        <option value="">選択してください</option>
-                        <option value="dental">歯科</option>
-                        <option value="medical">内科・総合診療</option>
-                        <option value="dermatology">皮膚科・美容皮膚科</option>
-                        <option value="ophthalmology">眼科</option>
-                        <option value="psychiatry">心療内科・精神科</option>
-                        <option value="orthopedics">整形外科</option>
-                        <option value="other">その他</option>
-                      </select>
-                    </div>
-                  </div>
+            {/* ご質問・ご要望 */}
+            <div>
+              <label htmlFor="message" className="block text-sm font-semibold text-slate-700 mb-2">
+                ご質問・ご要望
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                rows={4}
+                className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors resize-none"
+                placeholder="現在の課題やご要望をお聞かせください"
+              />
+            </div>
 
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div>
-                      <label className="block text-sm font-semibold text-slate-900 mb-2">
-                        お名前 <span className="text-red-500">*</span>
-                      </label>
-                      <input 
-                        type="text" 
-                        className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
-                        placeholder="例：田中 太郎"
-                        required
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-semibold text-slate-900 mb-2">
-                        役職 <span className="text-red-500">*</span>
-                      </label>
-                      <select className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors">
-                        <option value="">選択してください</option>
-                        <option value="director">理事長・院長</option>
-                        <option value="manager">事務長・マネージャー</option>
-                        <option value="doctor">医師・歯科医師</option>
-                        <option value="staff">スタッフ</option>
-                        <option value="other">その他</option>
-                      </select>
-                    </div>
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-semibold text-slate-900 mb-2">
-                      メールアドレス <span className="text-red-500">*</span>
-                    </label>
-                    <input 
-                      type="email" 
-                      className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
-                      placeholder="例：tanaka@clinic.com"
-                      required
-                    />
-                  </div>
-
-                  <button 
-                    type="button"
-                    onClick={() => setCurrentStep(2)}
-                    className="w-full bg-blue-600 text-white font-semibold py-4 px-8 rounded-lg hover:bg-blue-700 transition-colors text-lg"
-                  >
-                    次へ進む（詳細情報の入力）
-                    <svg className="w-5 h-5 ml-2 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            {/* 送信ボタン */}
+            <div className="text-center">
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="inline-flex items-center px-8 py-4 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 disabled:bg-blue-400 disabled:cursor-not-allowed transition-colors duration-200 text-lg shadow-lg hover:shadow-xl"
+              >
+                {isSubmitting ? (
+                  <>
+                    <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                     </svg>
-                  </button>
-                </form>
-              </div>
-            ) : (
-              <div>
-                <h3 className="text-2xl font-bold text-slate-900 mb-2 text-center">
-                  より具体的な診断のために
-                </h3>
-                <p className="text-slate-600 text-center mb-8">
-                  詳細な情報で、より精密な診断結果をお届けします
-                </p>
-
-                {/* Googleフォーム埋め込みエリア */}
-                <div className="bg-slate-50 rounded-xl p-8 text-center">
-                  <div className="mb-6">
-                    <svg className="w-16 h-16 text-blue-600 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    送信中...
+                  </>
+                ) : (
+                  <>
+                    <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                     </svg>
-                    <h4 className="text-xl font-bold text-slate-900 mb-2">
-                      詳細診断フォーム
-                    </h4>
-                    <p className="text-slate-600 mb-6">
-                      以下のフォームで、現在の課題や目標についてお聞かせください
-                    </p>
-                  </div>
-
-                  {/* Googleフォーム埋め込み予定エリア */}
-                  <div className="bg-white rounded-lg p-6 border-2 border-dashed border-slate-300 text-slate-500">
-                    <p className="mb-4">
-                      ここにGoogleフォームを埋め込みます
-                    </p>
-                    <p className="text-sm">
-                      実際の実装時に、以下の内容を含むGoogleフォームを作成・埋め込み：<br />
-                      • 現在の自由診療メニューと価格<br />
-                      • 月間患者数・売上規模<br />
-                      • 主な課題・困りごと<br />
-                      • 目標・期待する成果<br />
-                      • 希望連絡方法・時間帯
-                    </p>
-                  </div>
-
-                  <div className="mt-6 flex flex-col sm:flex-row gap-4">
-                    <button 
-                      type="button"
-                      onClick={() => setCurrentStep(1)}
-                      className="flex-1 bg-slate-200 text-slate-700 font-semibold py-3 px-6 rounded-lg hover:bg-slate-300 transition-colors"
-                    >
-                      <svg className="w-5 h-5 mr-2 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                      </svg>
-                      戻る
-                    </button>
-                    <button 
-                      type="button"
-                      className="flex-1 bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors"
-                      onClick={() => {
-                        // 実際の実装時はGoogleフォームへのリダイレクト
-                        alert('Googleフォームページに移動します（実装時）')
-                      }}
-                    >
-                      詳細フォームを開く
-                      <svg className="w-5 h-5 ml-2 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                      </svg>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            )}
-          </div>
+                    無料収益診断を申し込む
+                  </>
+                )}
+              </button>
+              
+              <p className="text-sm text-slate-500 mt-4">
+                ※ お申し込みいただいた情報は、診断結果の提供以外の目的では使用いたしません。
+              </p>
+            </div>
+          </form>
         </div>
 
-        {/* 安心要素 */}
-        <div className="mt-12 text-center text-blue-100">
-          <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-8">
+        {/* 信頼性の表示 */}
+        <div className="mt-12 text-center">
+          <div className="flex flex-wrap justify-center items-center gap-8 text-blue-100">
             <div className="flex items-center">
               <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
               </svg>
-              SSL暗号化通信で安全
+              <span className="text-sm">SSL暗号化通信</span>
             </div>
             <div className="flex items-center">
               <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
-              営業電話は一切なし
+              <span className="text-sm">個人情報保護法準拠</span>
             </div>
             <div className="flex items-center">
               <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
               </svg>
-              24時間以内にご返答
+              <span className="text-sm">24時間以内にご連絡</span>
             </div>
           </div>
         </div>
@@ -245,3 +255,4 @@ export default function CTAForm() {
     </section>
   )
 }
+

@@ -173,7 +173,7 @@ export default function HowItWorks() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192L5.636 18.364M12 12h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
-              <h4 className="font-semibold text-slate-900 mb-1">24/7技術サポート</h4>
+              <h4 className="font-semibold text-slate-900 mb-1">技術サポート</h4>
               <p className="text-sm text-slate-600">システムトラブル時の迅速対応</p>
             </div>
 
@@ -202,3 +202,4 @@ export default function HowItWorks() {
     </section>
   )
 }
+

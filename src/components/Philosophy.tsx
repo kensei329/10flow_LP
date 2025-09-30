@@ -18,19 +18,19 @@ export default function Philosophy() {
     },
     {
       category: "検診・ドック",
-      services: ["人間ドック上位プラン", "高精度画像診断", "血管年齢測定", "遺伝リスク検査"]
+      services: ["人間ドック", "高精度画像診断", "血管年齢測定", "遺伝リスク検査"]
     },
     {
       category: "心療内科",
       services: ["心理カウンセリング", "認知行動療法", "ストレスマネジメント", "マインドフルネス"]
     },
     {
-      category: "皮膚科（審美）",
+      category: "皮膚科",
       services: ["シミ・色素沈着治療", "医療スキンケア", "ケミカルピーリング", "毛穴改善"]
     },
     {
       category: "歯科",
-      services: ["医療ホワイトニング", "セラミック治療", "歯周再生", "インプラント"]
+      services: ["矯正", "インプラント", "セラミック", "歯周再生"]
     }
   ]
 
@@ -124,41 +124,6 @@ export default function Philosophy() {
           </div>
         </div>
 
-        {/* 対象外の明示 */}
-        <div className="bg-red-50 border border-red-200 rounded-2xl p-8">
-          <div className="flex items-start">
-            <div className="w-12 h-12 bg-red-100 text-red-600 rounded-xl flex items-center justify-center mr-6 flex-shrink-0">
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.996-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z" />
-              </svg>
-            </div>
-            <div>
-              <h3 className="text-2xl font-bold text-red-900 mb-4">
-                10flowでは対象外となる施術
-              </h3>
-              <p className="text-red-800 mb-4">
-                以下のような「収益性と患者価値のバランスが取れない」施術は、10flowの理念に適合しないため対象外となります：
-              </p>
-              <ul className="text-red-700 space-y-2">
-                <li className="flex items-start">
-                  <span className="mr-2">•</span>
-                  <span>美容整形手術（顔・体の形成を目的とするもの）</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-2">•</span>
-                  <span>豊胸手術など、身体を人工的に変化させる施術</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-2">•</span>
-                  <span>コンプレックスビジネスを主目的とする施術</span>
-                </li>
-              </ul>
-              <p className="text-red-700 text-sm mt-4 italic">
-                ※ ただし、機能改善・健康増進を主目的とし、収益性と患者価値の両立が可能な治療については、個別に検討いたします
-              </p>
-            </div>
-          </div>
-        </div>
 
         {/* 医療広告ガイドライン遵守 */}
         <div className="mt-16 bg-blue-50 border border-blue-200 rounded-2xl p-8">
